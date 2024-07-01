@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .main{
+        height: 200px;
+        width: 200px;
+        background-color: rgba(255, 166, 0, 0.281);
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        /* z-index: -3; */
+    }
+    .main::before{
+        height: 80%;
+        width: 80%;
+        content:"";
+            position: absolute;
+            background-color: red;
+            border-radius: 50%;
+            z-index: -1;
+
+    }
+    .main::after{
+        height: 0%;
+        width: 0%;
+        content:"";
+            position: absolute;
+            /* background-color: rgba(0, 255, 255, 0.212); */
+            border: 2px solid rgb(34, 219, 49);
+            border-radius: 50%;
+            z-index: -2;
+            animation: 1.5s infinite move;
+    }
+    i{
+        position: absolute;
+        transition: 0.5s;
+    }
+    .main:hover i:nth-child(1){
+        transform: scale(30);
+        transition: all 1s;
+        opacity: 0;
+    }
+    i{
+        color: white;
+        font-size: 40px;
+    }
+    @keyframes move {
+        100%{
+            height: 100%;
+            width: 100%;
+        }
+        
+    }
+    .main:hover{
+        background-color: brown;
+        /* opacity: 1; */
+        transition: all 0.1s;
+        
+    }
+    /* .main:hover::before{
+        height: 100%;
+        width: 100%;
+        transition: all .5s;
+
+    } */
+
+</style>
+<body>
+    <div class="main">
+        <i class="fa-solid fa-play"></i>
+        <i class="fa-solid fa-play"></i>
+    </div>
+</body>
+</html>
